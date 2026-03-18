@@ -1,0 +1,26 @@
+{
+    "name": "background extension",
+    "description": "",
+    "dependencies": {
+        "device": "*",
+        "sprite-fx": "github:kohanmathers/makecodespritefx#v1.2.0"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "assets.json",
+        "background-extension.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "4.0.12",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "tsprj"
+}
