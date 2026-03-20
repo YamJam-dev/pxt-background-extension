@@ -4,4 +4,3 @@ namespace SpriteKind {
     export const background = SpriteKind.create()
     export const backAnim = SpriteKind.create()
 }
-

@@ -284,6 +284,7 @@ namespace BG {
     //% block="sprite background $Img scale $Scale"
     //% Scale.defl=1
     //% group="background"
+    //% Img.shadow=screen_image_picker
     export function spriteBackground(Img: Image, Scale: number) {
         backgroundImage = sprites.create(Img, SpriteKind.background)
         backgroundImage.setScale(Scale, ScaleAnchor.Middle)
