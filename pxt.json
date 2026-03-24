@@ -3,7 +3,8 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "sprite-fx": "github:kohanmathers/makecodespritefx#v1.2.0"
+        "sprite-fx": "github:kohanmathers/makecodespritefx#v1.2.0",
+        "Timers": "github:microsoft/arcade-timers#v1.1.0"
     },
     "files": [
         "main.blocks",

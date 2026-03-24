@@ -5,10 +5,10 @@
 */
 
 //% color="#00008b" weight=100 block="Background"
-//% groups='["background", "screen split"]'
+//% groups='["background", "screen split", "extras"]'
 
 namespace BG {
-    //% block
+    //% block="set random background color"
     //% group="background"
     export function randomBgColor() {
         scene.setBackgroundColor(randint(1, 15))
@@ -294,12 +294,13 @@ namespace BG {
 
     }
 
-    //% block="run background animation with frames $frames interval $interval scale $scale"
+    //% block="background animation frames $frames interval $interval scale $scale"
     //% interval.defl=100
     //% scale.defl=1
     //% group="background"
+    //% frames.shadow=animation_editor
     export function backgroundAnimation(frames: Image[], interval: number, scale: number) {
-        backgroundAnim = sprites.create(frames[1], SpriteKind.backAnim)
+        backgroundAnim = sprites.create(frames[0], SpriteKind.backAnim)
         backgroundAnim.z = 1 / 0 * -1
         backgroundAnim.setFlag(SpriteFlag.RelativeToCamera, true)
         backgroundAnim.scale = scale
@@ -816,5 +817,44 @@ namespace BG {
         spriteFx.recolor(quarter4, 0, color4)
         quarter4.setPosition(scene.screenWidth() / 4 * 3.5, 60)
     }
+
+    //% block="pick $num1 or $num2"
+    //% num1.shadow=math_number
+    //% num1.defl=1
+    //% num2.shadow=math_number
+    //% num2.defl=2
+    //% group="extras"
+    export function pickRandomNum2(num1: number, num2: number): number {
+        if (Math.percentChance(50)) {
+            return num1
+        } else {
+            return num2
+        }
+    }
+
+    //% block="pick from $num1 $num2 $num3 or $num4"
+    //% num1.shadow=math_number
+    //% num1.defl=1
+    //% num2.shadow=math_number
+    //% num2.defl=2
+    //% num3.shadow=math_number
+    //% num3.defl=3
+    //% num4.shadow=math_number
+    //% num4.defl=4
+    export function pickRandomNum4(num1: number, num2: number, num3: number, num4: number) {
+        if (Math.percentChance(25)) {
+            return num1
+        } else if (Math.percentChance(25)) {
+            return num2
+        } else if (Math.percentChance(25)) {
+            return num3
+        } else {
+            return num4
+        }
+    }
+
+
+    
+
 
 }
